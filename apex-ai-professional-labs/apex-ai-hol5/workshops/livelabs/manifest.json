@@ -7,6 +7,10 @@
       "filename": "../../intro/intro.md"
     },
     {
+        "title": "Get Started",
+        "filename": "../../common-261/1-sign-up-apex/1-sign-up-apex.md"
+      },
+    {
       "title": "Lab 1: Low Code Application Development",
       "filename": "../../low-code-application-development/low-code-application-development.md"
     },

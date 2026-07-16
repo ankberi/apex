@@ -36,6 +36,8 @@ In this workshop, you will:
 
 - An APEX workspace.
 
+- Completion of Labs till Module 4.
+
 - An API key for the AI provider of your choice (OCI Gen AI, Open AI, Cohere, Google Gemini, Anthropic Claude, Mistral AI, Ollama and Generic(OpenAI API Compatible)).
 
 - If you choose OCI Gen AI as your AI provider, the prerequisites are as follows:
