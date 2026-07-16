@@ -6,7 +6,7 @@ In this workshop, you will create three applications in Oracle APEX by using low
 
 In this module, you will build the first working versions of the Talent Acquisition Portal, Employee Self-Service Portal, and HR Analytics App. You will create applications from wizard-defined pages, from an uploaded CSV file, from existing database tables, and from a natural-language prompts.
 
-Estimated workshop time: 30 minutes
+Estimated Time: 30 minutes
 
 ## Objectives
 
