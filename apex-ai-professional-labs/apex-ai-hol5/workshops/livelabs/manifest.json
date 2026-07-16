@@ -1,0 +1,19 @@
+{
+  "workshoptitle": "Low Code Application Development",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../intro/intro.md"
+    },
+    {
+      "title": "Lab 1: Low Code Application Development",
+      "filename": "../../low-code-application-development/low-code-application-development.md"
+    },
+    {
+      "title": "Need Help?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename": "https://livelabs.oracle.com/cdn/common/labs/need-help/need-help-livelabs.md"
+    }
+  ]
+}
