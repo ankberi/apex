@@ -2,9 +2,9 @@
 
 ## About this Workshop
 
-In this workshop, you will create three Transaction Management System applications in Oracle APEX by using low-code application creation options in App Builder.
+In this workshop, you will create three applications in Oracle APEX by using low-code application creation options in App Builder.
 
-The database schema is already available. In this module, you will build the first working versions of the Talent Acquisition Portal, Employee Self-Service Portal, and HR Analytics App. You will create applications from wizard-defined pages, from an uploaded CSV file, from existing database tables, and from a natural-language prompts.
+In this module, you will build the first working versions of the Talent Acquisition Portal, Employee Self-Service Portal, and HR Analytics App. You will create applications from wizard-defined pages, from an uploaded CSV file, from existing database tables, and from a natural-language prompts.
 
 Estimated workshop time: 30 minutes
 
@@ -13,10 +13,15 @@ Estimated workshop time: 30 minutes
 In this workshop, you will:
 
 - Create the Talent Acquisition Portal by using the Create App Wizard.
+
 - Create the Employee Self-Service Portal by using the Create App Wizard.
-- Create the HR Analytics App by using Application from File.
+
+- Create the HR Analytics App from a File.
+
 - Add report and form pages to the Talent Acquisition Portal from existing database tables.
+
 - Create a Talent Acquisition Portal cards dashboard from a natural-language prompts.
+
 - Review how Oracle APEX generates applications, pages, forms, and reports from the metadata you provide.
 
 ## Applications
