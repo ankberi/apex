@@ -65,12 +65,6 @@ In this workshop, you will:
 
 *Important: This workshop requires an active account with a supported Generative AI provider. Oracle APEX connects to the provider using your own credentials. Any API usage charges are billed directly by your provider. Please review your provider’s pricing before proceeding.*
 
-## Let's Get Started!
-
-- Click **Getting Started** from the menu on the right. If you already have an Oracle Cloud account, click on **Lab 1: Configure AI Service and Create Data Model using AI**.
-
->**Note**: If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-
 ## Downloads
 
 If you are stuck or the App is not working as expected, you can download and install the completed App as follows:
