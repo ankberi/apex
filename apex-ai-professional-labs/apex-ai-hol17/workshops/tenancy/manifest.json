@@ -9,7 +9,7 @@
       "filename": "../../00-introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Build the ESS Onboarding Wizard Using Collections",
+      "title": "Lab 1: Build an Onboarding Wizard Using Collections",
       "description": "",
       "type": "livelabs",
       "filename": "../../01_ess-onboarding-wizard/ess-onboarding-wizard.md"
@@ -21,7 +21,7 @@
       "filename": "../../02_public-holiday-calendar/public-holiday-calendar.md"
     },
     {
-      "title": "Lab 3: Build the TAP Offer Wizard Using Collections",
+      "title": "Lab 3: Build an Offer Wizard Using Collections",
       "description": "",
       "type": "livelabs",
       "filename": "../../03_tap-offer-wizard/tap-offer-wizard.md"

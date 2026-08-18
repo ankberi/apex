@@ -52,7 +52,11 @@ The wizard replaces a single Offer Form with a guided flow that separates offer 
 
     - Navigation > Parent Navigation Menu Entry: **Offers**
 
+    ![Offer Wizard definition with parent navigation set to Offers](images/04-enter-offer-wizard-definition.png)
+
 7. Click **Create Wizard**.
+
+    ![Generated wizard step pages for Offer Terms and Preview and Send](images/05-confirm-wizard-step-pages.png)
 
     ![Wizard steps renamed to Offer Terms and Preview and Send](images/06-name-offer-wizard-steps.png)
 
@@ -131,7 +135,9 @@ Step 1 collects offer values and stages them in `OFFER_COLLECTION`.
 
     - Appearance > Format mask: `FML999G999G999D00`
 
-    ![Set Value action query for deriving the job ID](images/14-salary-number-field.png)
+    ![Salary number field with currency format mask](images/14-salary-number-field.png)
+
+    ![Offer start date and expiry date picker items](images/15-offer-date-picker-items.png)
 
 9. Navigate to **Processing** tab and right-click **Processing** and select **Create Process**.
 
@@ -208,19 +214,76 @@ Step 2 shows the staged offer data, creates the final offer row, and sends the o
     | `P19_CANDIDATE` | Display Only |
     | `P19_JOB` | Display Only |
     | `P19_SALARY` | Display Only |
-    | `_P19_START` | Display Only |
-    | `P19_EXPIRY` | Display Only |
+    | `P19_START_DATE` | Display Only |
+    | `P19_EXPIRY_DATE` | Display Only |
     | `P19_OFFER_TO` | Hidden |
+    | `P19_OFFER_ID`| Hidden |
 
     ![Candidate display-only item on the Preview and Send step](images/20-preview-candidate-display-item.png)
 
-4. Select `P19_OFFER_TO` page item and enter the following:
+4. Select `P19_CANDIDATE` page item and enter/select the following:
+
+    - Under Source:
+
+        - Type: **Null**
+
+        - Used: **Always, replacing any existing value in session state**
+
+    ![Preview candidate item source set from the first wizard step](images/27-preview-candidate-source-item.png)
 
     - Under Default:
 
-        - Type:  **SQL Query return Single Value**
+        - Type: **SQL Query (return single value)**
 
-        - SQL Query returning Single Value: Copy and paste the following code:
+        - SQL Query (return single value: Copy and paste the following code:
+
+        ```
+        <copy>
+        SELECT first_name || ' ' || last_name FROM tms_candidates WHERE candidate_id = :P16_CANDIDATE_ID
+        </copy>
+        ```
+
+    ![Preview candidate default query](images/30-preview-candidate-default-query.png)
+
+5. Select `P19_JOB` page item and enter/select the following:
+
+    - Under Source:
+
+        - Type: **Null**
+
+        - Used: **Always, replacing any existing value in session state**
+
+    - Under Default:
+
+        - Type: **SQL Query (return single value)**
+
+        - SQL Query (return single value: Copy and paste the following code:
+
+        ```
+        <copy>
+        SELECT title FROM tms_jobs WHERE job_id = :P16_JOB_ID
+        </copy>
+        ```
+
+    ![Preview job default query](images/28-preview-job-default-query.png)
+
+6. Update the **Source** for following page items as follow:
+
+    | Page Item | Type | Item | Used |
+    | -- | --- | --- | --- |
+    | `P19_SALARY` | Item | `P16_SALARY` | Always, replacing any existing value in session state |
+    | `P19_START_DATE` | Item | `P16_START_DATE` | Always, replacing any existing value in session state |
+    | `P19_EXPIRY_DATE` | Item | `P16_EXPIRY_DATE` | Always, replacing any existing value in session state |
+
+    ![Preview salary item source set from the first wizard step](images/29-preview-salary-source-item.png)
+
+7. Select `P19_OFFER_TO` page item and enter the following:
+
+    - Under Default:
+
+        - Type:  **SQL Query (return single value)**
+
+        - SQL Query (return single value: Copy and paste the following code:
 
         ```
         <copy>
@@ -238,86 +301,109 @@ The final processing step reads the staged collection row, creates the offer, an
 
 1. Navigate **Processing** tab, right-click **Processing** and select **Create Process**.
 
+    ![Create Offer process menu on the Preview and Send page](images/23-create-offer-process-menu.png)
+
 2. In the Property Editor, enter/select the following:
 
-    - 
+    - Identification > Name: **Create Offer**
 
-3. For **PL/SQL Code**, enter:
+    - Source > PL/SQL Code: Copy and paste the following code:
 
+    ```
     <copy>
-
-    ```sql
     DECLARE
-        v_cand_id NUMBER;
-        v_job_id  NUMBER;
-        v_salary  NUMBER;
-        v_start   DATE;
-        v_expiry  DATE;
+    l_cand_id NUMBER;
+    l_job_id  NUMBER;
+    l_req_id  NUMBER;
+    l_salary  NUMBER;
+    l_start   DATE;
+    l_expiry  DATE;
     BEGIN
-        SELECT TO_NUMBER(c001),
-               TO_NUMBER(c002),
-               n001,
-               d001,
-               d002
-        INTO   v_cand_id,
-               v_job_id,
-               v_salary,
-               v_start,
-               v_expiry
-        FROM   apex_collections
-        WHERE  collection_name = 'OFFER_COLLECTION'
-        AND    seq_id = 1;
+    SELECT TO_NUMBER(c001),
+           TO_NUMBER(c002),
+           n001,
+           d001,
+           d002
+    INTO   l_cand_id,
+           l_job_id,
+           l_salary,
+           l_start,
+           l_expiry
+    FROM apex_collections
+    WHERE collection_name = 'OFFER_COLLECTION'
+      AND seq_id = 1;
 
-        INSERT INTO tms_offers (
-            candidate_id,
-            req_id,
-            offered_salary,
-            start_date,
-            expiry_date,
-            status
-        )
-        VALUES (
-            v_cand_id,
-            v_job_id,
-            v_salary,
-            v_start,
-            v_expiry,
-            'Sent'
-        )
-        RETURNING offer_id INTO :P19_OFFER_ID;
+    SELECT req_id
+    INTO   l_req_id
+    FROM   tms_job_requisitions
+    WHERE  job_id = l_job_id
+    AND    status = 'Open'
+    AND    ROWNUM = 1;
 
-        APEX_COLLECTION.DELETE_COLLECTION('OFFER_COLLECTION');
+    INSERT INTO tms_offers (
+        candidate_id,
+        req_id,
+        offered_salary,
+        start_date,
+        expiry_date,
+        status
+    )
+    VALUES (
+        l_cand_id,
+        l_req_id,
+        l_salary,
+        l_start,
+        l_expiry,
+        'Sent'
+    )
+    RETURNING offer_id INTO :P19_OFFER_ID;
+
+    apex_collection.delete_collection('OFFER_COLLECTION');
     END;
+    </copy>
     ```
 
-    </copy>
+    ![Create Offer process configured with PL/SQL code](images/24-create-offer-process-code.png)
 
-4. Create another process named **SEND_OFFER_EMAIL**.
+3. Create another process. Right-click **processing** and select **Create Process**.
 
-5. Set the type to **Send E-Mail**.
+    ![Create Send Offer Email process menu](images/25-create-send-email-process-menu.png)
 
-6. Configure it to run after **CREATE_OFFER**.
+4. In the Property Editor, enter/select the following:
 
-7. Enter or select the following settings:
+    - Under Identification:
 
-    - Template: **OFFER_SENT**
-    - To: `&P19_OFFER_TO.`
+        - Name: **Send Offer Email**
 
-8. Configure the email placeholders:
+        - Type: **Send E-Mail**
 
-    | Placeholder | Value |
-    | --- | --- |
-    | `CANDIDATE_NAME` | `SELECT first_name || ' ' || last_name FROM tms_candidates WHERE candidate_id = :P16_CANDIDATE_ID` |
-    | `JOB_TITLE` | `SELECT job_title FROM tms_jobs WHERE job_id = :P16_JOB_ID` |
-    | `OFFERED_SALARY` | `TO_CHAR(:P16_SALARY, 'FML999G999G999D00')` |
-    | `START_DATE` | `:P16_START_DATE` |
-    | `EXPIRY_DATE` | `:P16_EXPIRY_DATE` |
+    - Email Header > To: **&P19_OFFER_TO.**
 
-9. Create a success branch to the **Offer Management** page.
+    - Under Email Template:
 
-    The source identifies this target as page 14.
+        - Email Template: **Offer Sent**
 
-10. Add the same cancel cleanup logic from Task 3 to this wizard step.
+        - Placeholder Values: Click **5 placeholders, 0 assigned.**
+
+            - Assign Items or Values:
+
+            | Placeholder | Item or Value |
+            | --- | --- |
+            | JOB_TITLE | &P19_JOB. |
+            | CANDIDATE_NAME | &P19_CANDIDATE. |
+            | OFFERED_SALARY | &P19_SALARY. |
+            | START_DATE | &P19_START_DATE. |
+            | EXPIRY_DATE | &P19_EXPIRY_DATE. |
+
+            - Click **OK**.
+
+    ![Send Offer Email process placeholder values](images/26-send-offer-email-placeholders.png)
+
+    ![Updated Send Offer Email placeholder values](images/31-send-email-placeholder-values.png)
+
+5. Add the same cancel cleanup logic from Task 3 to this wizard step.
+
+6. Click **Save and Run**.
 
 ## Task 6: Test the Offer Wizard
 
@@ -325,11 +411,17 @@ Test both the finish path and the cancel path.
 
 1. Run the Offer Wizard.
 
+    ![Offer Wizard navigation entry in the Talent Acquisition Portal](images/32-run-offer-wizard-navigation.png)
+
 2. Enter offer data on the first step.
+
+    ![Offer Terms runtime page with candidate, salary, start date, and expiry date](images/33-enter-offer-terms-runtime.png)
 
 3. Click **Next**.
 
 4. Review the offer on the second step.
+
+    ![Preview and Send runtime page with staged offer details](images/34-review-offer-runtime.png)
 
 5. Click **Finish**.
 
