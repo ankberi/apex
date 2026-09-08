@@ -56,8 +56,6 @@ The wizard replaces a single Offer Form with a guided flow that separates offer 
 
 7. Click **Create Wizard**.
 
-    ![Generated wizard step pages for Offer Terms and Preview and Send](images/05-confirm-wizard-step-pages.png)
-
     ![Wizard steps renamed to Offer Terms and Preview and Send](images/06-name-offer-wizard-steps.png)
 
     *Note: The source uses page 16 for **Offer Terms** and page 19 for **Preview & Send**. Your generated page numbers may differ.*
@@ -396,8 +394,6 @@ The final processing step reads the staged collection row, creates the offer, an
             | EXPIRY_DATE | &P19_EXPIRY_DATE. |
 
             - Click **OK**.
-
-    ![Send Offer Email process placeholder values](images/26-send-offer-email-placeholders.png)
 
     ![Updated Send Offer Email placeholder values](images/31-send-email-placeholder-values.png)
 
