@@ -9,33 +9,39 @@ Estimated Lab Time: 15 minutes
 ### Objectives
 
 In this lab, you will:
-- Generate embeddings for HR policy content
 
-- Create an Oracle AI Vector Search configuration for policy records,
-- Create an HR Policy Search page in ESS,
+- Generate embeddings for HR policy content.
+
+- Create an Oracle AI Vector Search configuration for policy records.
+
+- Create an HR Policy Search page in ESS.
+
 - Test semantic ranking for policy-related natural-language questions.
 
 ## Task 1: Generate HR policy embeddings
 
-1. Open SQL Workshop and run the following update.
+1. Navigate back to your APEX workspace.
 
-    ```sql
-    <copy>UPDATE tms_hr_policy
+2. Navigate to **SQL Workshop** and then **SQL Commands**. **Run** the following SQL Query:
+
+    ```
+    <copy>
+    UPDATE tms_hr_policy
     SET embedding_vector = apex_ai.get_vector_embeddings(
             p_value => title || ' ' || content,
             p_service_static_id => 'db-onnx-model'
         );
-    COMMIT;</copy>
+    COMMIT;
+    </copy>
     ```
 
     ![Generating embeddings for all HR policy records](images/generate-hr-policy-embeddings.png)
 
-2. Verify the embedding status.
+3. To verify the embedding status, **Run** the following SQL Query:
 
-    Run:
-
-    ```sql
-    <copy>SELECT policy_id,
+    ```
+    <copy>
+    SELECT policy_id,
            category,
            title,
            CASE
@@ -43,7 +49,8 @@ In this lab, you will:
                ELSE 'EMBEDDED'
            END AS embedding_status
     FROM tms_hr_policy
-    ORDER BY category, title;</copy>
+    ORDER BY category, title;
+    </copy>
     ```
 
     Confirm that the policy rows show EMBEDDED.
@@ -52,120 +59,129 @@ In this lab, you will:
 
 ## Task 2: Create the HR Policy Vector Search configuration
 
-1. Open ESS and navigate to Shared Components.
+1. Open **Employee Self-Service Portal (ESS)** application.
 
-    Go to Shared Components, then Search Configurations, and select Create.
+2. Navigate to **Shared Components**.
+
+    ![Opening Search Configurations in ESS Shared Components](images/open-ess-shared-components.png)
+
+3. Under **Navigation and Search**, select **Search Configurations**.
 
     ![Opening Search Configurations in ESS Shared Components](images/open-ess-search-configurations.png)
 
-2. Configure the new search configuration.
+4. Click **Create**.
 
-    Use the following values:
+    ![Opening Search Configurations in ESS Shared Components](images/ess-search-configurations-list.png)
 
-    - Search Type: Oracle AI Vector Search
-    - Name: HR Policy Semantic Search
-    - Static ID: HR_POLICY_SEMANTIC_SEARCH
-    - Source: TMS_HR_POLICY
-    - Primary Key: POLICY_ID
-    - Vector Column: EMBEDDING_VECTOR
-    - Vector Provider: DB ONNX Model
+5. Configure the settings as follows:
 
-    Configure the result mappings:
+    - Name: **HR Policy Semantic Search**
 
-    - Title: TITLE
-    - Description: CONTENT
+    - Search Type: **Oracle AI Vector Search**
 
-    Save the Search Configuration.
+6. Click **Next**.
 
-    ![Configuring HR Policy Semantic Search vector search settings](images/create-hr-policy-search-configuration.png)
+    ![Opening Search Configurations in ESS Shared Components](images/create-hr-policy-search-configuration.png)
 
-    ![Saving the HR Policy Semantic Search configuration](images/hr-policy-search-configuration-created.png)
+7. Select **DB ONNX Model** as Vector Provider.
+
+8. For Table/View Owner, select **TMS\_HR\_POLICY** and click **Next**.
+
+    ![Opening Search Configurations in ESS Shared Components](images/select-hr-policy-search-source.png)
+
+9. For Column Mapping, enter/select the following:
+
+    - Primary Key: **POLICY_ID (Number)**
+
+    - Vector Column: **EMBEDDING_VECTOR (Vector)**
+
+    - Title Column: **TITLE (Varchar2)**
+
+    - Description Column: **CONTENT (Clob)**
+
+10. Click **Create Search Configuration**
+
+    ![Configuring HR Policy Semantic Search vector search settings](images/map-hr-policy-search-columns.png)
 
 ## Task 3: Create the HR Policy Search page
 
-1. Open ESS and create a page.
+1. Navigate to **Application ID**.
 
-    Navigate to Create Page and choose Component, then Search Page.
+    ![Configuring HR Policy Semantic Search vector search settings](images/hr-policy-search-configuration-created.png)
+
+2. Click **Create Page**.
+
+    ![Selecting Search Page component type in ESS page creation](images/open-ess-create-page.png)
+
+3. Select **Search Page**.
 
     ![Selecting Search Page component type in ESS page creation](images/select-search-page-component.png)
 
-2. Configure the page.
+4. Configure the following:
 
-    Set the following values:
+    - Name: **HR Policy Search**
 
-    - Name: HR Policy Search
-    - Page Mode: Normal
-    - Search Configuration: HR Policy Semantic Search
+    - Search Configurations: Select **HR Policy Semantic Search**
 
-3. Complete the wizard.
+    - Parent Navigation Menu Entry: **HR Info**
 
-    Configure navigation as follows:
+5. Click **Create Page**.
 
-    - Use Navigation: On
-    - Parent Navigation Entry: HR Info
-    - Navigation Entry: HR Policy Search
+    ![Selecting Search Page component type in ESS page creation](images/configure-hr-policy-search-page.png)
 
-    Click Create Page.
+    ![Selecting Search Page component type in ESS page creation](images/set-hr-policy-search-navigation.png)
 
-4. Review the generated components.
+6. Select the **P24_SEARCH** page item. In the Property Editor, update the following:
 
-    APEX generates a Search Page Item, a Search Results region, and the Search Source mapped to HR Policy Semantic Search.
-
-    If the generated page number is 18, the search item is similar to P18_SEARCH and the Search Results region is automatically mapped to the Search Page Item and the Search Source.
-
-5. Update the search field placeholder.
-
-    In Page Designer, select the generated Search item. Set the placeholder to:
-
-    ```text
-    Search HR policies by meaning...
-    ```
-
-    Save the page.
-
-    ![HR Policy Search page after configuration](images/hr-policy-search-empty-state.png)
+    - Appearance > Value Placeholder: **Search HR policies by meaning...**
 
     ![HR Policy Search page configured and saved in Page Designer](images/set-hr-policy-search-placeholder.png)
 
+7. Click **Save and Run**.
+
 ## Task 4: Validate policy search behavior
 
-1. Run the HR Policy Search page.
-
-    Open ESS, go to HR Info, and run HR Policy Search.
-
-2. Search for annual leave.
+1. In HR Policy Search page, search for annual leave.
 
     Enter:
 
-    ```text
+    ```
+    <copy>
     annual leave policy
+    </copy>
     ```
 
     Relevant leave-related policies should rank higher.
 
     ![HR Policy Search results for an annual leave query](images/hr-policy-search-annual-leave-results.png)
 
-3. Search for benefits information.
+2. Search for benefits information.
 
     Enter:
 
-    ```text
+    ```
+    <copy>
     what benefits are available to employees
+    </copy>
     ```
 
     Relevant benefit-related policies should rank higher.
 
     ![HR Policy Search results for an employee benefits query](images/hr-policy-search-benefits-results.png)
 
-4. Search for onboarding requirements.
+3. Search for onboarding requirements.
 
     Enter:
 
-    ```text
+    ```
+    <copy>
     new employee onboarding requirements
+    </copy>
     ```
 
     Relevant onboarding and employee-policy content should rank higher.
+
+    ![HR Policy Search results for an employee benefits query](images/new-employee-search.png)
 
 ## Summary
 

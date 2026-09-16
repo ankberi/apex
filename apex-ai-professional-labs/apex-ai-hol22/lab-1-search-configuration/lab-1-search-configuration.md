@@ -36,11 +36,13 @@ To enable your schema to load the mining models, you must grant the necessary pr
 
 In this lab, you will load the ONNX Models into your database.
 
-1. From your Application Homepage, Navigate to **SQL Workshop** > **SQL Commands**.
+1. Log in to your Oracle APEX workspace.
+
+2. From your Application homepage, navigate to **SQL Workshop** > **SQL Commands**.
 
     ![open sql commands](images/open-sql-commands.png)
 
-2. Copy and paste the below code to load the CLIP text model and click **Run**.
+3. Copy and paste the below code to load the model and click **Run**.
 
     ```
     <copy>
@@ -73,7 +75,7 @@ In this lab, you will load the ONNX Models into your database.
 
     ![load ONNX model](images/load-onnx-embedding-model.png)
 
-3. Validate the model registration and run the following query:
+4. Copy and paste the below code and click **Run** to validate the model registration.
 
     ```
     <copy>
@@ -83,7 +85,7 @@ In this lab, you will load the ONNX Models into your database.
     </copy>
     ```
 
-    Confirm that DOC_MODEL is present and that it is classified as an embedding model.
+5. Confirm that DOC_MODEL is present and that it is classified as an embedding model.
 
     ![Database model validation showing DOC_MODEL registered as embedding function](images/validate-doc-model.png)
 
@@ -107,7 +109,7 @@ In this lab, you will load the ONNX Models into your database.
 
         - Provider Type: **Database ONNX Model**
 
-        - Name: **DB ONNX Model**
+        - Name: **ONNX Model**
 
     - Under Local Embedding:
 
@@ -125,7 +127,7 @@ In this lab, you will load the ONNX Models into your database.
 
     ![SQL Workshop showing successful vector embedding generation for Oracle APEX](images/vector-provider-created.png)
 
-7. **Run** the following query and Verify that a VECTOR value is returned.
+7. **Run** the following query and verify that a VECTOR value is returned.
 
     ```
     <copy>
