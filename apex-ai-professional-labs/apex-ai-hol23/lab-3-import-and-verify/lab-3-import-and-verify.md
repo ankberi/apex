@@ -12,8 +12,7 @@ In this lab, you will:
 - Verify the Candidate Search Help region in Page Designer.
 - Verify the region and its message when you run the Candidate Pipeline page.
 
-Estimated Lab Time: 30 minutes
-Estimated Time: 30 minutes
+Estimated Time: 5 minutes
 
 ## Task 1: Import the Application
 

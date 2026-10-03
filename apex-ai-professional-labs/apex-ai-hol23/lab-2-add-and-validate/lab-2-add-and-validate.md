@@ -12,7 +12,7 @@ In this lab, you will:
 - Add the Candidate Search Help static content region.
 - Save and validate the APEXlang project.
 
-Estimated Time: 30 minutes
+Estimated Time: 10 minutes
 
 ## Task 1: Locate the Candidate Pipeline Region
 

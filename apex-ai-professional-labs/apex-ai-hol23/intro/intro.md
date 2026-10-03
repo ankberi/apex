@@ -6,7 +6,7 @@ This module exports the Talent Acquisition Portal (TAP) and Employee Skills Sear
 
 In Module 4, you used Blueprints with a simple 3-page specification to create a basic TAP skeleton. Here, you export the full 17-page TAP application and read the specification that describes the pages, regions, items, processes, validations, and workflows built in the preceding modules.
 
-Estimated Time: 90 minutes
+Estimated Time: 45 minutes
 
 ### Objectives
 
@@ -32,9 +32,11 @@ You need:
 
 | Lab | Focus | Estimated time |
 | --- | --- | --- |
-| Lab 1 | Export TAP and review the APEXlang project | 30 minutes |
-| Lab 2 | Add a new component and validate the project | 30 minutes |
-| Lab 3 | Import TAP and verify the change | 30 minutes |
+| Lab 1 | Set up the environment | 15 minutes |
+| Lab 2 | Set up the APEXlang skills repo | 5 minutes |
+| Lab 3 | Export TAP and review the APEXlang project | 10 minutes |
+| Lab 4 | Add a new component and validate the project | 10 minutes |
+| Lab 5 | Import TAP and verify the change | 5 minutes |
 
 ## What Carries Forward
 

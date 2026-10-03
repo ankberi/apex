@@ -12,7 +12,7 @@ In this lab, you will:
 - Export TAP to a local APEXlang project.
 - Locate Page 4 and review existing APEX components.
 
-Estimated Time: 30 minutes
+Estimated Time: 10 minutes
 
 ## Task 1: Export TAP
 

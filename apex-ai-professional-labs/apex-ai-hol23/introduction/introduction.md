@@ -6,7 +6,7 @@ This module exports the Talent Acquisition Portal (TAP) and Employee Skills Sear
 
 In Module 4, you used Blueprints with a simple 3-page specification to create a basic TAP skeleton. Here, you export the full 17-page TAP application and read the specification that describes the pages, regions, items, processes, validations, and workflows built in the preceding modules.
 
-Estimated Workshop Time: 90 minutes
+Estimated Workshop Time: 45 minutes
 
 ### Objectives
 
