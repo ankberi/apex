@@ -24,7 +24,7 @@ In this lab, you will:
 
     !["Open Object Browser"](images/open-object-browser.png "")
 
-3. In Object Browser, open the create menu and select **Package**.
+3. In Object Browser, right-click Packages and select **Create Package**.
 
     !["Create package menu"](images/create-package-menu.png "")
 

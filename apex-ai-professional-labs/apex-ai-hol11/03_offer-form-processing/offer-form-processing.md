@@ -66,7 +66,7 @@ In this lab, you will:
     - Under Error:
         - Error Location: **Inline with Field**
 
-        - Associated Item: **P_OFFERED_SALARY**
+        - Associated Item: **P9\_OFFERED\_SALARY**
 
     !["Salary validation settings"](images/salary-validation-settings.png "")
 

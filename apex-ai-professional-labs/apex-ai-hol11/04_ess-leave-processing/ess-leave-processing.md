@@ -220,9 +220,9 @@ In this lab, you will:
 
 13. Navigate to the **Rendering** tab.
 
-14. Select **Submit** button and set **Database Action** to **SQL Insert Action**.
+14. Select **SUBMIT_LEAVE** button and set **Database Action** to **SQL Insert Action**.
 
-    !["Set submit database action"](images/set-submit-database-action.png "")
+    !["Set submit database action"](images/get-image.png "")
 
 15. Navigate back to the **Processing** tab.
 
@@ -238,7 +238,9 @@ In this lab, you will:
 
         - Type: **Automatic Row Processing (DML)**
 
-    !["Confirm Leave Request DML process"](images/confirm-leave-request-dml-process.png "")
+        - Form Region: **Leave Request Form**
+
+    !["Confirm Leave Request DML process"](images/leave-req-region.png "")
 
 18. Save the page.
 
