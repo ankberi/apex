@@ -6,7 +6,7 @@ In this workshop, you will create three applications in Oracle APEX by using low
 
 In this module, you will build the first working versions of the Talent Acquisition Portal, Employee Self-Service Portal, and HR Analytics App. You will create applications from wizard-defined pages, from an uploaded CSV file, from existing database tables, and from a natural-language prompts.
 
-Estimated Time: 30 minutes
+Estimated Time: 25 minutes
 
 ## Objectives
 
@@ -64,14 +64,6 @@ In this workshop, you will:
 *Note: This workshop assumes you are using Oracle APEX 26.1. Some of the features might not be available in prior releases and the instructions, flow, and screenshots might differ if you use an older version of Oracle APEX.*
 
 *Important: This workshop requires an active account with a supported Generative AI provider. Oracle APEX connects to the provider using your own credentials. Any API usage charges are billed directly by your provider. Please review your provider’s pricing before proceeding.*
-
-## Downloads
-
-If you are stuck or the App is not working as expected, you can download and install the completed App as follows:
-
-1. **[Click here](files/event-management-hol-app.sql)** to download the completed application.
-
-2. Follow Lab [Appendix: Download Instructions](?lab=8-appendix) to import the application in your workspace.
 
 ## Learn More - *Useful Links*
 
