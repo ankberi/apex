@@ -63,4 +63,5 @@ In this lab, you used a natural-language prompt to generate and run a Recruitmen
 ## Acknowledgements
 
 - **Author** - Ankita Beri, Senior Product Manager
+
 - **Last Updated By/Date** - Ankita Beri, Senior Product Manager, July 2026
