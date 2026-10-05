@@ -31,7 +31,6 @@ In this lab, you will:
             p_value => title || ' ' || content,
             p_service_static_id => 'db-onnx-model'
         );
-    COMMIT;
     </copy>
     ```
 

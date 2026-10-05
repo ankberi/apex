@@ -73,7 +73,6 @@ In this lab, you will:
             p_service_static_id => 'db-onnx-model'
         )
     WHERE skills_text IS NOT NULL;
-    COMMIT;
     </copy>
     ```
 
@@ -102,8 +101,8 @@ In this lab, you will:
 3. To test semantic ranking, **Run** the below SQL Query:
 
     ```
-    <copy>S
-    ELECT c.candidate_id,
+    <copy>
+    SELECT c.candidate_id,
            c.first_name || ' ' || c.last_name AS candidate_name,
            c.skills_text,
            VECTOR_DISTANCE(
