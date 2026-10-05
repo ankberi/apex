@@ -42,19 +42,17 @@ Open the exported project and review its main folders and files.
     - `shared-components/`
     - `deployments/`
 
-    ![Exported TAP project folders](images/project-folders.png)
+    ![Exported TAP project folders](images/page-4-file.png)
 
-## Task 3: Open Page 4
-
-Open the APEXlang file for the Candidate Pipeline page.
-
-1. In the `pages/` folder, open `p00004-candidate-pipeline.apx`.
+3. In the `pages/` folder, open `p00004-candidate-pipeline.apx`.
 
     ![Candidate Pipeline page file](images/page-4-file.png)
 
-## Task 4: Review Existing Components
+## Task 3: Review Existing Components
 
 Use search to connect the exported APEXlang entries with familiar APEX components.
+
+You learned about interactive reports (IRs) in an earlier module. In this task, you will see how the Candidate Pipeline report and its components are represented in APEXlang.
 
 1. Use `Ctrl + F`.
 

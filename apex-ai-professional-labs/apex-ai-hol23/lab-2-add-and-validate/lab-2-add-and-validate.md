@@ -37,9 +37,9 @@ Add a help message before the Candidate Pipeline region. The new region uses seq
         type: staticContent
         source {
             htmlCode:
-                ```html
+                html
                 <p>Use semantic search to find candidates based on skills, experience and related technologies.</p>
-                ```
+
         }
         layout {
             sequence: 45
