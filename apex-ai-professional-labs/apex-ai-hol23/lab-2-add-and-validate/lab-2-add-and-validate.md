@@ -59,11 +59,9 @@ Add a help message before the Candidate Pipeline region. The new region uses seq
 
     ![Candidate Search Help region after import](images/confirm-seq2.png)
 
-## Task 3: Save the File
+3. Save the APEXlang page file after adding the region.
 
-Save the APEXlang page file after adding the region.
-
-1. Press Command + S or Ctrl + S, to save `p00004-candidate-pipeline.apx`.
+4. Press **(Command + S)** or **(Ctrl + S)**, to save **`p00004-candidate-pipeline.apx`**.
 
     ![Candidate Search Help region after import](images/save-apx.png)
 

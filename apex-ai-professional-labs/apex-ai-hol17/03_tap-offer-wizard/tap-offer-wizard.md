@@ -286,7 +286,7 @@ Step 2 shows the staged offer data, creates the final offer row, and sends the o
         <copy>
         SELECT email
         FROM tms_candidates
-        WHERE candidate_id = :P19_CANDIDATE_ID;
+        WHERE candidate_id = :P16_CANDIDATE_ID;
         </copy>
         ```
 
