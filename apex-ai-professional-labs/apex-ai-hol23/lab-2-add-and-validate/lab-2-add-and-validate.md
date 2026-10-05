@@ -65,7 +65,7 @@ Add a help message before the Candidate Pipeline region. The new region uses seq
 
     ![Candidate Search Help region after import](images/save-apx.png)
 
-## Task 4: Validate the APEXlang Project
+## Task 3: Validate the APEXlang Project
 
 Run validation against the exported project and confirm that the new specification is error-free.
 
