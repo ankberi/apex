@@ -66,7 +66,7 @@ Step 1 collects offer values and stages them in `OFFER_COLLECTION`.
 
 1. Open the first wizard step in Page Designer.
 
-2. In the left pane, right-click **Offer Terms** region and select **Create Page Item**.
+2. In the left pane, right-click **Offer Terms** under **Wizard Sub Regions** and select **Create Page Item**.
 
     ![Offer Terms page open in Page Designer](images/07-create-offer-terms-page-item.png)
 
@@ -80,13 +80,13 @@ Step 1 collects offer values and stages them in `OFFER_COLLECTION`.
     | `P16_START_DATE` | Date Picker |
     | `P16_EXPIRY_DATE` | Date Picker |
 
-4. Select `P16_CANDIDATE_ID` page item and enter/select the following:
+4. Select `P16\_CANDIDATE\_ID` page item and enter/select the following:
 
     - Under List of Values:
 
         - Type: **Shared Component**
 
-        - List of Value: **TMS_CANDIDATES.FIRST_NAME**
+        - List of Value: **TMS\_CANDIDATES.FIRST\_NAME**
 
     ![Candidate select list item on the Offer Terms page](images/08-candidate-select-list-item.png)
 
@@ -154,7 +154,6 @@ Step 1 collects offer values and stages them in `OFFER_COLLECTION`.
 
         APEX_COLLECTION.ADD_MEMBER(
             p_collection_name => 'OFFER_COLLECTION',
-            p_seq             => 1,
             p_c001            => :P16_CANDIDATE_ID,
             p_c002            => :P16_JOB_ID,
             p_n001            => TO_NUMBER(REPLACE(:P16_SALARY, ',')),
@@ -201,7 +200,7 @@ Step 2 shows the staged offer data, creates the final offer row, and sends the o
 
     ![Page Finder with Preview and Send selected](images/18-open-preview-send-page.png)
 
-2. Right-click **Preview & Send** region and select **Create Page Item**.
+2. Navigate to **Wizard Sub Regions**, right-click **Preview & Send** region and select **Create Page Item**.
 
     ![Create page item on the Preview and Send wizard step](images/19-create-preview-page-item.png)
 
@@ -375,7 +374,7 @@ The final processing step reads the staged collection row, creates the offer, an
 
         - Type: **Send E-Mail**
 
-    - Email Header > To: **&P19_OFFER_TO.**
+    - Email Header > To: **&P19\_OFFER\_TO.**
 
     - Under Email Template:
 
@@ -390,8 +389,8 @@ The final processing step reads the staged collection row, creates the offer, an
             | JOB_TITLE | &P19_JOB. |
             | CANDIDATE_NAME | &P19_CANDIDATE. |
             | OFFERED_SALARY | &P19_SALARY. |
-            | START_DATE | &P19_START_DATE. |
-            | EXPIRY_DATE | &P19_EXPIRY_DATE. |
+            | START_DATE | &P19\_START\_DATE. |
+            | EXPIRY_DATE | &P19\_EXPIRY\_DATE. |
 
             - Click **OK**.
 

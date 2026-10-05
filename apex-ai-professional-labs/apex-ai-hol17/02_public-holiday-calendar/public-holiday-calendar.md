@@ -30,31 +30,33 @@ The REST Data Source retrieves public holiday data by year and country code. APE
 
     ![Click Create REST Data Source](images/click-create-rest-data-source.png)
 
-4. Select **Simple HTTP**.
+4. Select **From scratch** and click **Next**.
 
     ![Create REST Source From Scratch](images/create-rest-source-from-scratch.png)
 
-5. For the URL endpoint, enter:
+5. Select **Simple HTTP**. For the URL endpoint, enter the following and click **Next**.
 
-    <copy>
-
-    ```text
-    https://date.nager.at/api/v3/publicholidays/{year}/{country_code}
     ```
-
+    <copy>
+    https://date.nager.at/api/v3/publicholidays/{year}/{country_code}
     </copy>
+    ```
 
     ![Enter Public Holidays endpoint](images/enter-public-holidays-endpoint.png)
 
+6. For Remote Server, leave everything as default and click **Next**.
+
     ![Review remote server URL path](images/review-remote-server-url-path.png)
+
+7. Again, click **Next**.
 
     ![Set no pagination](images/set-no-pagination.png)
 
-6. Open **Advanced** and confirm that `year` and `country_code` appear as URL pattern parameters.
+8. Open **Advanced** and confirm that `year` and `country_code` appear as URL pattern parameters.
 
     ![Open Advanced discovery](images/open-advanced-discovery.png)
 
-7. Set sample values:
+9. Set sample values:
 
     | Parameter | Value |
     | --- | --- |
@@ -63,11 +65,11 @@ The REST Data Source retrieves public holiday data by year and country code. APE
 
     ![Set URL pattern parameters](images/set-url-pattern-parameters.png)
 
-8. Click **Discover**.
+10. Click **Create REST Data Source**.
 
     ![Preview discovered holidays](images/preview-discovered-holidays.png)
 
-9. Save the REST Data Source.
+11. Click newly created REST Data Source **Public Holidays**
 
     ![Confirm REST Data Source created](images/confirm-rest-data-source-created.png)
 
@@ -77,33 +79,51 @@ Data Synchronization stores the public holiday response in a local table. The ca
 
 1. Open the REST Data Source you created.
 
-2. Open **Data Synchronization**.
+2. Navigate to **Manage Synchronization** in the right navigation menu.
 
     ![Open Manage Synchronization](images/open-manage-synchronization.png)
 
-3. Enable synchronization.
+3. In REST Synchronization, enter or select the following settings:
 
-4. Enter or select the following settings:
+    - Local Table Owner: Select you schema
 
-    - Target Table: **PUBLIC_HOLIDAYS_SYNC**
-    - Sync Type: **Replace**
-    - Schedule: **Weekly, every Monday**
+    - Synchronize To: New Table
 
-    ![Configure sync target table](images/configure-sync-target-table.png)
+    - Table Name: **PUBLIC\_HOLIDAYS\_SYNC**
+
+4. Click **Save**.
+
+     ![Configure sync target table](images/configure-sync-target-table.png)
+
+5. Under Table Status, click **Create Table**.
 
     ![Create synchronization table](images/create-synchronization-table.png)
 
+6. Under Details, for Synchronization Type, select **Replace**.
+
+7. Beside **Synchronization Schedule**, click **settings icon**.
+
     ![Set Replace sync type](images/set-replace-sync-type.png)
+
+8. In Interval Builder, enter/select the following:
+
+    - Frequency: **Weekly**
+
+    - Execution Day: Enable **Mon**
+
+9. Click **Set Execution Interval**
 
     ![Set weekly Monday schedule](images/set-weekly-monday-schedule.png)
 
+10. Click **Save**.
+
     ![Save synchronization schedule](images/save-synchronization-schedule.png)
 
-5. Run the synchronization once manually.
+11. Save and Run the synchronization once manually.
 
     ![Save and run synchronization](images/save-and-run-synchronization.png)
 
-6. Confirm that the synchronized table contains data.
+12. Confirm that the synchronized table contains data. Beside Table Status, click **View SQL Workshop**.
 
     For this API, the holiday date column is `DATE_` and the holiday name column is `LOCALNAME`.
 

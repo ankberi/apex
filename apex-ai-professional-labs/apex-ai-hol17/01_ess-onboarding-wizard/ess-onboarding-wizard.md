@@ -98,7 +98,7 @@ The wizard provides a guided, multi-step flow for onboarding data. APEX Collecti
 5. Enter or select the following attributes:
 
     - Page Definition > Wizard Name: **Onboarding Wizard**
-    - Navigation > Parent Navigation Entry: **My Work**
+    - Navigation > Parent Navigation Menu Entry: **My Work**
 
 6. Click **Create Wizard**.
 
@@ -108,7 +108,7 @@ The wizard provides a guided, multi-step flow for onboarding data. APEX Collecti
 
 Step 1 collects personal information and initializes the collection. The collection uses three rows: one row for text and passport data, one row for the employment contract, and one row for the tax form.
 
-1. The first wizard step, **Page 9: Step-1**, in Page Designer will be opened.
+1. The first wizard step, **Page 9: Step 1**, in Page Designer will be opened.
 
 2. Create a form region in the **Body** section. Right-click **Wizard Sub Regions** and select **Create Region**.
 
@@ -168,13 +168,8 @@ Step 1 collects personal information and initializes the collection. The collect
         APEX_COLLECTION.ADD_MEMBER(
             p_collection_name => 'ONBOARDING_COLLECTION'
         );
-
-        APEX_COLLECTION.ADD_MEMBER(
-            p_collection_name => 'ONBOARDING_COLLECTION'
-        );
     END;
     ```
-
     </copy>
 
     ![Configure save personal information process](images/configure-save-personal-info-process.png)
@@ -185,7 +180,7 @@ Step 1 collects personal information and initializes the collection. The collect
 
 Step 2 stores uploaded documents in the collection. Each document goes into a separate row, which keeps the collection easy to query and avoids bundling multiple documents into one BLOB.
 
-1. From the Page Designer toolbar, navigate to page selector and open **Step-2** in Page Designer.
+1. From the Page Designer toolbar, navigate to page selector and open **Step 2** in Page Designer.
 
     ![Open Step 2 page](images/open-step2-page.png)
 
@@ -206,8 +201,8 @@ Step 2 stores uploaded documents in the collection. Each document goes into a se
     | Name | Type | Label |
     | --- | --- | --- |
     | `P10_PASSPORT` | File Upload | Passport / ID |
-    | `P10_CONTRACT` | File Upload | Signed Contract |
-    | `P10_TAX_FORM` | File Upload | Tax Form |
+    | `P10_CONTRACT_BLOB` | File Upload | Signed Contract |
+    | `P10_TAX_FORM_BLOB` | File Upload | Tax Form |
 
     ![Configure passport upload item](images/configure-passport-upload-item.png)
 
@@ -314,11 +309,13 @@ Step 2 stores uploaded documents in the collection. Each document goes into a se
 
     ![Configure upload progress report](images/configure-upload-progress-report.png)
 
+11. Click **Save**.
+
 ## Task 5: Configure Step 3 for Review and Final Processing
 
 Step 3 shows the staged data, previews onboarding tasks, commits the data to the database, and removes the temporary collection.
 
-1. From the Page Designer toolbar, navigate to page selector and open **Step-3** in Page Designer.
+1. From the Page Designer toolbar, navigate to page selector and open **Step 3** in Page Designer.
 
     ![Open Step 3 page](images/open-step3-page.png)
 
