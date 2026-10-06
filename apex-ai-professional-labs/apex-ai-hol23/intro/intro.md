@@ -28,6 +28,8 @@ You need:
 - A database connection.
 - A local folder where you can export the TAP project.
 
+*Note: **Free Developer Tier:** Direct database connections from Oracle SQL Developer for VS Code are not supported for Oracle APEX Free Developer Tier workspaces. If you are using this tier, you can skip this module.*
+
 ## Labs
 
 | Lab | Focus | Estimated time |
