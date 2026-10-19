@@ -12,7 +12,7 @@ In this workshop, you will build a Supply Chain Management application on a repl
 
 The workshop is designed for beginner users, database developers, platform engineers, and executives who want to understand how AI Interactive Reports can make SCM analytics faster, more accessible, and easier to adopt - without losing visibility into how the report was configured.
 
-Estimated Workshop Time: 35 Minutes
+Estimated Workshop Time: 45 Minutes
 
 ## Objectives
 
@@ -21,6 +21,7 @@ In this workshop, you learn how to:
 - Set up the SCM data model, sample data, and Supply Chain Management application.
 - Configure a Generative AI provider and link it to the application.
 - Create an Interactive Report using natural language and enable Generative AI support with report and column-level context.
+- Explore the APEX 26.2 report layout, filter controls, and key phrases for report actions.
 - Use Search with AI and the Chat Assistant to analyze replenishment alerts.
 - Enable dictation support for voice-to-text input.
 
@@ -38,7 +39,7 @@ In this workshop, you learn how to:
 
     - The logged-in user should have the necessary privileges to create and manage Autonomous Database instances in this compartment. You can configure these privileges via an OCI IAM Policy. If you are using a Free Tier account, it is likely that you already have all the necessary privileges.
 
-> **Note:** This workshop assumes you are using Oracle APEX 26.1. Some of the features might not be available in prior releases and the instructions, flow, and screenshots might differ if you use an older version of Oracle APEX.
+> **Note:** Lab 4 uses the refreshed Interactive Report UI in Oracle APEX 26.2. Earlier APEX releases might not include these controls, and the report screens may differ. The shared Get Started materials include screenshots captured on APEX 26.1.
 >
 > The application ID in the screenshots may vary. Please ignore the application ID.
 
@@ -49,10 +50,11 @@ In this workshop, you learn how to:
 | 1 | Create a Supply Chain Management Application | 5 minutes |
 | 2 | Configure Generative AI Service | 5 minutes |
 | 3 | Create an Interactive Report Using Natural Language | 5 minutes |
-| 4 | Configure Column-Level AI Attributes | 5 minutes |
-| 5 | Use Search with AI | 5 minutes |
-| 6 | Use the Interactive Report Chat Assistant | 5 minutes |
-| 7 | Enable Dictation Support | 5 minutes |
+| 4 | Explore the Interactive Report UI in Oracle APEX 26.2 | 10 minutes |
+| 5 | Configure AI Attributes for the Interactive Report | 5 minutes |
+| 6 | Use Search with AI | 5 minutes |
+| 7 | Use the Interactive Report Chat Assistant | 5 minutes |
+| 8 | Enable Dictation Support | 5 minutes |
 
 ## Downloads
 
@@ -66,7 +68,7 @@ If you are stuck or the application is not working as expected, you can download
 
 - Follow **Lab 2 > Task 1** to configure the Generative AI Service.
 
-- Follow **Lab 5 and Lab 6** to run the application and walk through the AI Interactive Report features.
+- Follow **Lab 6 and Lab 7** to run the application and walk through the AI Interactive Report features.
 
 ## Uninstall the Application and Data Model
 

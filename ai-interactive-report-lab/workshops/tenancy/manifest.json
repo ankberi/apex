@@ -27,26 +27,31 @@
         {
             "title": "Lab 3: Create an Interactive Report using Natural Language",
             "filename": "../../lab-3-create-an-interactive-report-using-natural-language/lab-3-create-an-interactive-report-using-natural-language.md",
-            "description": "Create the replenishment report page on SCM_REPLENISHMENT_V and enable natural language support."
+            "description": "Create the replenishment report page on SCM_REPLENISHMENT_V."
         },
         {
-            "title": "Lab 4: Configure Column-Level AI Attributes",
-            "filename": "../../lab-4-configure-column-level-ai-attributes/lab-4-configure-column-level-ai-attributes.md",
-            "description": "Add SCM-specific AI context and reference data for report columns."
+            "title": "Lab 4: Explore the Interactive Report UI in Oracle APEX 26.2",
+            "filename": "../../lab-4-explore-the-interactive-report-ui/lab-4-explore-the-interactive-report-ui.md",
+            "description": "Explore the refreshed report layout, filter controls, drag-and-drop columns, and key phrases for report actions. Complete Lab 5 first to enable Search with AI before using the key phrases."
         },
         {
-            "title": "Lab 5: Use Search with AI",
-            "filename": "../../lab-5-use-search-with-ai/lab-5-use-search-with-ai.md",
+            "title": "Lab 5: Configure AI Attributes for the Interactive Report",
+            "filename": "../../lab-5-configure-column-level-ai-attributes/lab-5-configure-column-level-ai-attributes.md",
+            "description": "Enable Search with AI and add report-level context, then add SCM-specific AI context and reference data for report columns."
+        },
+        {
+            "title": "Lab 6: Use Search with AI",
+            "filename": "../../lab-6-use-search-with-ai/lab-6-use-search-with-ai.md",
             "description": "Test AI search prompts, row search behavior, and chip refinement."
         },
         {
-            "title": "Lab 6: Use the Interactive Report Chat Assistant",
-            "filename": "../../lab-6-use-the-interactive-report-chat-assistant/lab-6-use-the-interactive-report-chat-assistant.md",
+            "title": "Lab 7: Use the Interactive Report Chat Assistant",
+            "filename": "../../lab-7-use-the-interactive-report-chat-assistant/lab-7-use-the-interactive-report-chat-assistant.md",
             "description": "Use chat prompts to analyze, refine, visualize, and save report views."
         },
         {
-            "title": "Lab 7: Enable Dictation Support [Optional]",
-            "filename": "../../lab-7-enable-dictation-support/lab-7-enable-dictation-support.md",
+            "title": "Lab 8: Enable Dictation Support [Optional]",
+            "filename": "../../lab-8-enable-dictation-support/lab-8-enable-dictation-support.md",
             "description": "Enable voice-to-text input for the Interactive Report search bar and Chat Assistant."
         },
         {

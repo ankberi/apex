@@ -16,7 +16,7 @@ In this lab, you learn how to:
 
 ### Prerequisites
 
-- Completed Labs 1 through 6.
+- Completed Labs 1 through 7.
 - A browser that supports the Web Speech API (Chrome, Edge, or Safari).
 - A working microphone connected to your device.
 

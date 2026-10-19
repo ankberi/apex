@@ -1,8 +1,8 @@
-# Configure Column-Level AI Attributes
+# Configure AI Attributes for the Interactive Report
 
 ## Introduction
 
-The AI does not have access to your actual business data. It relies entirely on the metadata you provide to understand your report columns. In the previous lab, you added report-level context that describes what the report is about. In this lab, you will go one level deeper and configure column-level AI attributes for key columns in `SCM_REPLENISHMENT_V`.
+The AI does not have access to your actual business data. It relies entirely on the metadata you provide to understand your report. Lab 3 created the report, and Lab 4 introduced the APEX 26.2 report interface. In this lab, you will first enable Natural Language Support and add report-level context, then configure column-level AI attributes for key columns in `SCM_REPLENISHMENT_V`.
 
 In APEX Interactive Reports, each report column includes a Generative AI section where developers can refine AI behavior for that specific column. There are two key settings: **Column Context**, which provides additional notes describing the purpose or interpretation of a column, and **Reference Data Type**, which indicates the type of reference data (Static Values, SQL Query, or Shared Component) that the AI can use when forming responses. By adding business descriptions and reference values, you give the AI the vocabulary it needs to correctly interpret column names, map user terms to valid filter values, and generate accurate report actions.
 
@@ -14,11 +14,40 @@ Estimated Lab Time: 5 minutes
 
 In this lab, you learn how to:
 
+- Enable Natural Language Support and add report-level context.
 - Add SCM-specific column context to key report columns.
 - Define reference values for status and warehouse-related columns.
 - Validate that AI uses the column guidance correctly.
 
-## Task 1: Add SCM Column Context
+## Task 1: Enable Natural Language and Add Report Context
+
+To generate report settings from natural language, APEX provides the LLM with Interactive Report context - including the report definition, column metadata, available reference values, and the current report state. The AI uses this metadata to determine which settings to apply; it does not access your business data. In this task, you will enable natural language support for the report region, choose the default AI search behavior, and describe what the report represents.
+
+1. In **Page Designer**, select the **SCM Replenishment** region and open the **Attributes** tab.
+
+2. In the **Generative AI** section, turn **Natural Language Support** **On**.
+
+    ![Open the report region attributes](images/enable-natural-language-support.png)
+
+3. Confirm **Default Search Mode** is **Search with AI**.
+
+4. In **Report Context**, enter the following text:
+
+    ```
+    <copy>
+    Replenishment alerts show where stock should be moved into the pick face. High priority means urgent action. Qty to Target is the suggested replenishment quantity. Warehouse Code identifies the fulfillment location.
+    </copy>
+    ```
+
+    ![Enter report context](images/enter-report-context.png)
+
+5. Select **Save and Run Page**.
+
+6. Confirm that the report opens with Search with AI and the conversational search controls.
+
+    ![Confirm Search with AI is available](images/confirm-search-with-ai.png)
+
+## Task 2: Add SCM Column Context
 
 Report-level context tells the AI what the report is about, but column context tells it what each field means. Use column context when users ask questions using business language rather than database column names. Without it, a column like `QTY_TO_TARGET` is just a number. With context, the AI understands it represents the suggested replenishment quantity. Similarly, `RAISED_AT` could be any timestamp, but column context clarifies it as the date when the alert was raised. In this task, you will add business descriptions to key columns so the AI can generate accurate filters, sorts, and aggregations from natural language prompts.
 
@@ -90,7 +119,7 @@ Report-level context tells the AI what the report is about, but column context t
 
     ![Save the column context updates](images/save-column-context-updates.png)
 
-## Task 2: Configure Reference Data and Validate the Result
+## Task 3: Configure Reference Data and Validate the Result
 
 Column context describes what a field means, but reference data tells the AI what values are valid. Use reference data when users ask questions that name specific values from a known list. Without it, the AI might guess values that do not exist, use incorrect spelling or capitalization, or apply invalid filter values that return no results. For example, when a user asks for "open alerts," the AI needs to know that the valid status values are OPEN, IN_REVIEW, ACTIONED, CLOSED, and SUPPRESSED. In this task, you will define reference values for categorical columns so the AI maps user terms to the correct filter values.
 
@@ -160,15 +189,15 @@ Column context describes what a field means, but reference data tells the AI wha
 
     ![Save and run the page with the column AI settings](images/save-and-run-page-with-column-ai-settings.png)
 
-11. The replenishment report opens again with the saved column-level AI settings. The remaining validation of AI search and assistant behavior is covered in the next two labs.
+11. The replenishment report opens again with the saved column-level AI settings. Return to **Lab 4 Task 2** to try its key phrases, then continue to the Search with AI lab.
 
 ## Summary
 
-You added column context to describe the business meaning of key report columns and defined reference data for status, alert type, and warehouse columns. These settings give the AI the vocabulary it needs to map natural language terms to the correct columns and valid filter values. The report is ready for natural language interaction in the next labs.
+You enabled Search with AI, added report-level and column-level context, and defined reference data for status, alert type, and warehouse columns. Return to **Lab 4 Task 2** to apply the key phrases to the report. Then proceed to the Search with AI lab for additional prompt and row-search behavior.
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 - **Author** - Ankita Beri, Senior Product Manager
-- **Last Updated By/Date** - Ankita Beri, Senior Product Manager, June 2026
+- **Last Updated By/Date** - Ankita Beri, Senior Product Manager, October 2026
