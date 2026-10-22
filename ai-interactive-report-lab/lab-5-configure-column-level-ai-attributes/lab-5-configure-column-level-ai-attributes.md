@@ -23,15 +23,19 @@ In this lab, you learn how to:
 
 To generate report settings from natural language, APEX provides the LLM with Interactive Report context - including the report definition, column metadata, available reference values, and the current report state. The AI uses this metadata to determine which settings to apply; it does not access your business data. In this task, you will enable natural language support for the report region, choose the default AI search behavior, and describe what the report represents.
 
-1. In **Page Designer**, select the **SCM Replenishment** region and open the **Attributes** tab.
+1. In **Page Designer**, select the **Replenishment Overview** region.
 
-2. In the **Generative AI** section, turn **Natural Language Support** **On**.
+2. In the Property Editor, navigate to the **Attributes** tab.
+
+3. In the **Generative AI** section, turn **Natural Language Support** **On**.
 
     ![Open the report region attributes](images/enable-natural-language-support.png)
 
-3. Confirm **Default Search Mode** is **Search with AI**.
+4. Confirm **Default Search Mode** is **Search with AI**.
 
-4. In **Report Context**, enter the following text:
+    ![Choose Search with AI as the default search mode](images/choose-default-search-mode.png)
+
+5. In **Report Context**, enter the following text:
 
     ```
     <copy>
@@ -41,9 +45,11 @@ To generate report settings from natural language, APEX provides the LLM with In
 
     ![Enter report context](images/enter-report-context.png)
 
-5. Select **Save and Run Page**.
+6. Select **Save and Run Page**.
 
-6. Confirm that the report opens with Search with AI and the conversational search controls.
+    ![Save and run the report page](images/save-and-run-report-page.png)
+
+7. Confirm that the report opens with Search with AI and the conversational search controls.
 
     ![Confirm Search with AI is available](images/confirm-search-with-ai.png)
 
@@ -51,23 +57,17 @@ To generate report settings from natural language, APEX provides the LLM with In
 
 Report-level context tells the AI what the report is about, but column context tells it what each field means. Use column context when users ask questions using business language rather than database column names. Without it, a column like `QTY_TO_TARGET` is just a number. With context, the AI understands it represents the suggested replenishment quantity. Similarly, `RAISED_AT` could be any timestamp, but column context clarifies it as the date when the alert was raised. In this task, you will add business descriptions to key columns so the AI can generate accurate filters, sorts, and aggregations from natural language prompts.
 
-1. In **App Builder**, open the Supply Chain Management application and open the replenishment report page in **Page Designer**.
-
-    ![Open the replenishment page in Page Designer](images/open-replenishment-page-in-page-designer.png)
-
-2. In the left pane, expand the report columns.
+1. Navigate back to the Page Designer. In the left pane, expand the report **Columns**.
 
     ![Expand the report columns](images/expand-report-columns.png)
 
-3. Select the column **QTY\_TO\_TARGET**.
+2. Select the column **QTY\_TO\_TARGET**.
 
     ![Select the QTY_TO_TARGET column](images/select-qty-to-target-column.png)
 
-4. In the right pane, scroll to the **Generative AI** section for the selected column. If the section is collapsed, expand it.
+3. In the Property Editor, scroll to the **Generative AI** section for the selected column. If the section is collapsed, expand it.
 
-    ![Open the Generative AI section](images/open-generative-ai-section-for-qty-to-target.png)
-
-5. In **Column Context**, enter the following context value:
+4. In **Column Context**, enter the following context value:
 
     ```
     <copy>
@@ -77,11 +77,11 @@ Report-level context tells the AI what the report is about, but column context t
 
     ![Enter the QTY_TO_TARGET column context](images/enter-qty-to-target-column-context.png)
 
-6. Select the column **PRIORITY_CODE**.
+5. Select the column **PRIORITY_CODE**.
 
     ![Select the PRIORITY_CODE column](images/select-priority-code-column.png)
 
-7. In the **Generative AI** section, enter the following **Column Context** value:
+6. In the **Generative AI** section, enter the following **Column Context** value:
 
     ```
     <copy>
@@ -91,11 +91,11 @@ Report-level context tells the AI what the report is about, but column context t
 
     ![Enter the PRIORITY_CODE column context](images/enter-priority-code-column-context.png)
 
-8. Select the column **RAISED_AT**.
+7. Select the column **RAISED_AT**.
 
     ![Select the RAISED_AT column](images/select-raised-at-column.png)
 
-9. In the **Generative AI** section, enter the following **Column Context** value:
+8. In the **Generative AI** section, enter the following **Column Context** value:
 
     ```
     <copy>
@@ -105,7 +105,7 @@ Report-level context tells the AI what the report is about, but column context t
 
     ![Enter the RAISED_AT column context](images/enter-raised-at-column-context.png)
 
-10. Select the column **ALERT\_TYPE\_CODE**. In the **Generative AI** section, enter the following **Column Context** value:
+9. Select the column **ALERT\_TYPE\_CODE**. In the **Generative AI** section, enter the following **Column Context** value:
 
     ```
     <copy>
@@ -115,7 +115,7 @@ Report-level context tells the AI what the report is about, but column context t
 
     ![Enter the ALERT_TYPE_CODE column context](images/alter-context.png)
 
-11. Select **Save**.
+10. Select **Save**.
 
     ![Save the column context updates](images/save-column-context-updates.png)
 
@@ -189,7 +189,9 @@ Column context describes what a field means, but reference data tells the AI wha
 
     ![Save and run the page with the column AI settings](images/save-and-run-page-with-column-ai-settings.png)
 
-11. The replenishment report opens again with the saved column-level AI settings. Return to **Lab 4 Task 2** to try its key phrases, then continue to the Search with AI lab.
+11. The replenishment report opens again with the saved column-level AI settings.
+
+    ![Run the report with the saved column AI settings](images/run-replenishment-report-after-saving-column-ai-settings.png)
 
 ## Summary
 

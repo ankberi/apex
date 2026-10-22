@@ -32,15 +32,11 @@ With all the AI configuration in place, you can now see the feature in action. W
 
     ![Enter the open alerts prompt](images/enter-open-alerts-prompt.png " ")
 
-3. Confirm that the report applies a filter chip for open or in-review alerts, narrowing the list to unresolved items.
+3. Confirm that the report applies an `ALERT_STATUS_CODE = OPEN` filter chip, narrowing the list to open items.
 
     ![Confirm the open alert chip](images/confirm-open-alert-chip.png " ")
 
-4. Remove the chip by selecting **X**.
-
-    ![Remove the open alert chip](images/remove-open-alert-chip.png " ")
-
-5. In the search bar, enter the following and press **Enter**.
+4. Keep the open-alert filter active. In the search bar, enter the following and press **Enter** to sort the open alerts by stock gap.
 
     ```
     <copy>
@@ -48,17 +44,25 @@ With all the AI configuration in place, you can now see the feature in action. W
     </copy>
     ```
 
-    ![Enter the sort prompt](images/enter-sort-prompt.png " ")
+    ![Enter the sort prompt while the open-alert filter is active](images/enter-sort-prompt.png " ")
 
-6. Confirm that the report applies a descending sort on `QTY_TO_TARGET`.
+5. Confirm that the report applies a descending sort on `QTY_TO_TARGET`.
 
     ![Confirm the quantity sort](images/confirm-qty-sort.png " ")
+
+6. Select **Reset** to clear the AI filter and sort settings.
+
+    ![Select Reset on the report](images/reset-report.png " ")
+
+7. In the confirmation dialog, select **Apply** to restore the default report settings.
+
+    ![Confirm resetting the report](images/confirm-reset.png " ")
 
 ## Task 2: Compare AI Search with Row Search
 
 The search bar supports two modes: Row Search and Search with AI. Short keyword inputs (fewer than three words) trigger an immediate Row Search, while longer natural language prompts are routed to the AI for interpretation. This design preserves the existing Interactive Report search behavior while enabling natural language input in the same control. In this task, you will compare both modes and observe how the report determines which one to apply.
 
-1. Remove the filter chip. In the search bar, enter `PixelWave` and press **Enter**.
+1. In the search bar, enter `PixelWave` and press **Enter**. The report uses Row Search and adds a row-search chip.
 
     ![Enter the row search](images/enter-warehouse-row-search.png " ")
 
@@ -66,7 +70,7 @@ The search bar supports two modes: Row Search and Search with AI. Short keyword 
 
     ![Confirm the row search behavior](images/confirm-row-search-behavior.png " ")
 
-3. Now, remove the filter chip, enter the following AI-style prompt, and press **Enter**.
+3. Replace the row-search query with the following AI-style prompt and press **Enter**.
 
     ```
     <copy>
@@ -76,11 +80,7 @@ The search bar supports two modes: Row Search and Search with AI. Short keyword 
 
     ![Enter the AI prompt](images/enter-warehouse-ai-prompt.png " ")
 
-4. Confirm that the gradient AI processing indicator appears while the request is being interpreted.
-
-    ![Show the AI processing indicator](images/show-grad.png " ")
-
-5. Review the applied filter chips created by AI. The assistant should apply filters for critical priority, out-of-stock alert type, and open status.
+4. Review the applied filter chips created by AI. The assistant should apply filters for critical priority, out-of-stock alert type, and open status.
 
     ![Review the AI chips](images/review-ai-chips.png " ")
 
@@ -93,4 +93,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 - **Author** - Ankita Beri, Senior Product Manager
-- **Last Updated By/Date** - Ankita Beri, Senior Product Manager, June 2026
+- **Last Updated By/Date** - Ankita Beri, Senior Product Manager, October 2026
