@@ -39,7 +39,7 @@ In this workshop, you learn how to:
 
     - The logged-in user should have the necessary privileges to create and manage Autonomous Database instances in this compartment. You can configure these privileges via an OCI IAM Policy. If you are using a Free Tier account, it is likely that you already have all the necessary privileges.
 
-> **Note:** Lab 4 uses the refreshed Interactive Report UI in Oracle APEX 26.2. Earlier APEX releases might not include these controls, and the report screens may differ. The shared Get Started materials include screenshots captured on APEX 26.1.
+> **Note:** Lab 4 uses the refreshed Interactive Report UI in Oracle APEX 26.2. Earlier APEX releases might not include these controls, and the report screens may differ.
 >
 > The application ID in the screenshots may vary. Please ignore the application ID.
 
@@ -89,4 +89,4 @@ After completing the workshop, follow these steps to remove the application and 
 ## Acknowledgements
 
 - **Author** - Ankita Beri, Senior Product Manager
-- **Last Updated By/Date** - Ankita Beri, Senior Product Manager, June 2026
+- **Last Updated By/Date** - Ankita Beri, Senior Product Manager, October 2026
