@@ -104,9 +104,23 @@ The microphone icon also appears in the Chat Assistant. In this task, you will s
 
 5. The browser transcribes your speech into the chat input field. Select the **microphone** icon again to stop transcription, then press **Enter** or select the **Send Message** button to submit the prompt. Confirm that the Chat Assistant groups the report by item category with a count of alerts.
 
-    [Dictation with the Chat Assistant](videohub:1_bfqd2ni0)
+    <video controls preload="metadata" width="100%">
+      <source src="images/chat-assistant-dictation.mp4" type="video/mp4">
+      Your browser does not support embedded video. <a href="images/chat-assistant-dictation.mp4">Play the MP4 recording</a>.
+    </video>
 
     ![Group By applied from voice input](images/search-micro.png " ")
+
+    [Download the original Chat Assistant MOV recording](files/chat-assistant-dictation.mov).
+
+The following recording shows the completed grouped report and the Assistant's response.
+
+<video controls preload="metadata" width="100%">
+  <source src="images/chat-assistant-grouped-result.mp4" type="video/mp4">
+  Your browser does not support embedded video. <a href="images/chat-assistant-grouped-result.mp4">Play the MP4 recording</a>.
+</video>
+
+[Download the original grouped result MOV recording](files/chat-assistant-grouped-result.mov).
 
 ## Summary
 
