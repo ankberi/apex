@@ -1,4 +1,4 @@
-# Create a Supply Chain Management Application
+# Import the Data Model, Sample Data, and Create Base Application
 
 ## Introduction
 

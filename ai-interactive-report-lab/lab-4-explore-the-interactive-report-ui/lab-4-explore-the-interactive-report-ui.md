@@ -1,4 +1,4 @@
-# Explore the Interactive Report UI in Oracle APEX 26.2
+# Explore and Configure Interactive Reports with Key Phrases
 
 ## Introduction
 

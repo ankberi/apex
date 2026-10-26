@@ -8,16 +8,16 @@
             "description": "Workshop overview, audience, objectives, and lab flow for the new AI Interactive Report feature."
         },
         {
-        "title": "Get Started",
+        "title": "Provision an APEX Workspace",
         "filename": "../../common-261/1-sign-up-apex/1-sign-up-apex.md"
       },
         {
-            "title": "Lab 1: Create a Supply Chain Management Application",
+            "title": "Lab 1: Import the Data Model, Sample Data, and Create Base Application",
             "filename": "../../lab-1-create-a-scm-application/lab-1-create-a-scm-application.md",
             "description": "Load the SCM scripts, create the application shell, and verify the seeded SCM objects."
         },
         {
-            "title": "Lab 2: Configure a Generative AI Service",
+            "title": "Lab 2: Configure Generative AI Service",
             "filename": "../../lab-2-configure-an-ai-service/lab-2-configure-an-ai-service.md",
             "type": {
                 "OCIGenAI": "OCIGenAI",
@@ -30,7 +30,7 @@
             "description": "Create the replenishment report page on SCM_REPLENISHMENT_V."
         },
         {
-            "title": "Lab 4: Explore the Interactive Report UI in Oracle APEX 26.2",
+            "title": "Lab 4: Explore and Configure Interactive Reports with Key Phrases",
             "filename": "../../lab-4-explore-the-interactive-report-ui/lab-4-explore-the-interactive-report-ui.md",
             "description": "Explore the refreshed report layout, filter controls, drag-and-drop columns, and key phrases for report actions. Complete Lab 5 first to enable Search with AI before using the key phrases."
         },
