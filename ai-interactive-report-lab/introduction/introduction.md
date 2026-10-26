@@ -1,6 +1,6 @@
-# Introduction
+# Build an AI Interactive Report in Oracle APEX
 
-## About This Workshop
+## Introduction
 
 Interactive Reports in Oracle APEX offer end users a rich set of capabilities, including filtering, sorting, control breaks, highlighting, aggregations, charts, groupings, and pivots. While these features are powerful and well established, configuring them often requires navigating through multiple menus and dialogs. As a result, some capabilities may be underutilized due to discoverability challenges or the time needed to apply the appropriate settings.
 
