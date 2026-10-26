@@ -60,9 +60,9 @@ In this workshop, you learn how to:
 
 If you are stuck or the application is not working as expected, you can download and install the completed application as follows:
 
-- Download the [ai-interactive-report-lab.sql](files/ai-interactive-report-lab.sql) completed application export file.
+- Download the [ai-interactive-report-lab-scm.sql](files/ai-interactive-report-lab-scm.sql) completed application export file.
 
-- Import the *ai-interactive-report-lab.sql* file into your APEX Workspace. Follow the steps in the Import Application wizard to import the application.
+- Import the *ai-interactive-report-lab-scm.sql* file into your APEX Workspace. Follow the steps in the Import Application wizard to import the application.
 
 - Follow **Lab 1 > Task 1 and Task 2** to load the data model and sample data.
 
